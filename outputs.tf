@@ -1,3 +1,3 @@
 output "config_bucket_name" {
-  value = module.config_bucket.this_s3_bucket_id
+  value = module.config_bucket.s3_bucket_id
 }
