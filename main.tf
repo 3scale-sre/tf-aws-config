@@ -11,6 +11,7 @@ module "config_label" {
 ## Config bucket
 module "config_bucket" {
   source                  = "terraform-aws-modules/s3-bucket/aws"
+  version                 = "v2.9.0"
   bucket                  = module.config_label.id
   acl                     = "private"
   block_public_acls       = true
@@ -121,7 +122,7 @@ module "config" {
   source             = "trussworks/config/aws"
   version            = "4.3.0"
   config_name        = module.config_label.id
-  config_logs_bucket = module.config_bucket.this_s3_bucket_id
+  config_logs_bucket = module.config_bucket.s3_bucket_id
   #config_sns_topic_arn                     = aws_sns_topic.config.arn
   check_cloud_trail_encryption             = true
   check_cloud_trail_log_file_validation    = true
