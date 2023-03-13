@@ -11,7 +11,7 @@ module "config_label" {
 ## Config bucket
 module "config_bucket" {
   source                  = "terraform-aws-modules/s3-bucket/aws"
-  version                 = "v2.9.0"
+  version                 = "v3.8.2"
   bucket                  = module.config_label.id
   acl                     = "private"
   block_public_acls       = true
